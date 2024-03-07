@@ -1,16 +1,8 @@
 const Total = ({ parts }) => {
-  return (
-    <p>
-      <h3>
-        total of{" "}
-        {parts[0].exercises +
-          parts[1].exercises +
-          parts[2].exercises +
-          parts[3].exercises}{" "}
-        exercises
-      </h3>
-    </p>
-  );
+  const total = parts.reduce((accumulator, part) => {
+    return accumulator + part.exercises;
+  }, 0);
+  return <h3>total of {total} exercises</h3>;
 };
 
 export default Total;
